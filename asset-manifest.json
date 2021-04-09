@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/crossfit/static/css/main.4a504dd0.chunk.css",
+    "main.js": "/crossfit/static/js/main.c2c0dd3d.chunk.js",
+    "main.js.map": "/crossfit/static/js/main.c2c0dd3d.chunk.js.map",
+    "runtime-main.js": "/crossfit/static/js/runtime-main.d27a27f2.js",
+    "runtime-main.js.map": "/crossfit/static/js/runtime-main.d27a27f2.js.map",
+    "static/js/2.3b39c189.chunk.js": "/crossfit/static/js/2.3b39c189.chunk.js",
+    "static/js/2.3b39c189.chunk.js.map": "/crossfit/static/js/2.3b39c189.chunk.js.map",
+    "index.html": "/crossfit/index.html",
+    "static/css/main.4a504dd0.chunk.css.map": "/crossfit/static/css/main.4a504dd0.chunk.css.map",
+    "static/js/2.3b39c189.chunk.js.LICENSE.txt": "/crossfit/static/js/2.3b39c189.chunk.js.LICENSE.txt",
+    "static/media/logo.262c7486.png": "/crossfit/static/media/logo.262c7486.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d27a27f2.js",
+    "static/js/2.3b39c189.chunk.js",
+    "static/css/main.4a504dd0.chunk.css",
+    "static/js/main.c2c0dd3d.chunk.js"
+  ]
+}
