@@ -1,0 +1,124 @@
+/* Menu */
+.nav-menu{
+  background-color: #db3d44;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1005;
+  min-width: 64px;
+  transition: min-width 0.2s;
+  -webkit-transition: min-width 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  /* color: #fff; */
+  color: transparent;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.nav-menu.active{
+  min-width: 180px;
+  transition: min-width 0.2s;
+  -webkit-transition: min-width 0.2s;
+}
+
+/* Button toggle */
+.button-toggle{
+  position: relative;
+  width: 64px;
+  height: 64px;
+  float: left;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
+  background-image: none;
+  color: #fff;
+  opacity: 0.7;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  
+}
+/* Close X */
+.nav-menu.active > .button-toggle{
+  text-align: start;
+  align-self: flex-start;
+  margin-left: 1.2em;
+}
+
+/* Menu icon active */
+.navicon{
+  display: block;
+  float: left;
+  width: 64px;
+  height: 50px;
+  margin-right: -6px;
+  line-height: 50px;
+  text-align: center;
+  transition: opacity 0.2s linear;
+  -webkit-transition: opacity 0.2s linear;
+}
+
+
+/* Category Name Active */
+.nav-menu.active > .sidenav-nav-micons > .sidenav-item > .nav-navitem > .navtext{
+  width: 0;
+  opacity: 1;
+  visibility: visible;
+  color: #fff;
+}
+
+/* Category Name Normal Hidden  */
+.sidenav-nav-micons > .sidenav-item > .nav-navitem > .navtext{
+  width: 0;
+  visibility: hidden;
+  opacity: 0;
+  background-color: transparent;
+  color: transparent;
+  transition: visibility 0s 0.2s, opacity 0.2s linear;
+}
+
+.navtext{
+  font-size: 18px;
+  padding-top: 5px;
+}
+
+.sidenav-nav-micons{
+  float: left;
+  padding: 0;
+  margin: 0;
+  clear:both;
+  list-style: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+.sidenav-item-active{
+  /* clear: both;
+  position: relative; */
+}
+
+/* Black line when clic on icon */
+.sidenav-nav-micons > .sidenav-item > .nav-navitem {
+  position: relative;
+  display: block;
+  line-height: 50px;
+  height: 50px;
+  white-space: nowrap;
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  opacity: 0.7;
+}
+
+/* Clic on someone icon */
+.sidenav-nav-micons > .sidenav-item.highlighted > .nav-navitem{
+  background-color: rgba(0, 0, 0 , .2);
+  opacity: 1;
+}
