@@ -30,9 +30,7 @@ export default function LateralPanel() {
           <div className="sidenav-nav-micons">
                 {SidebarData.map((item, index) => {
                   return (
-                          /* <div key={index} className={sidebar ? 'sidenav-item-active':'sidenav-item'}> */
                           <div key={index} onClick={(e)=>showSelect(index)} className={`sidenav-item ${select==index?'highlighted':''}`}>
-                          {/* <div onClick={(e)=>showSelect(index)} className={`nav-navitem${select==index?'-selected':''}`}> */}
                             <div className='nav-navitem mt-3'>
                               <div key={index} className="navicon" id={item.title}>
                                 {item.icon}
