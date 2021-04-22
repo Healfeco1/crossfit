@@ -13,14 +13,14 @@ export const SidebarData = [
     },
     {
         title: 'Reports',
-        path: '/reports',
+        path: '/resetpassword',
         icon: <IoIcons.IoIosPaper/>,
         cName: 'nav-text',
         id: 1
     },
     {
         title: 'Products',
-        path: '/products',
+        path: '/atletas',
         icon: <FaIcons.FaCartPlus/>,
         cName: 'nav-text',
         id: 2

@@ -1,3 +1,4 @@
+import React, {useState} from 'react'
 import {BrowserRouter as Router,
         Switch,
         Route,
@@ -5,20 +6,16 @@ import {BrowserRouter as Router,
   } from "react-router-dom";
 import ResetPassword from "./Components/ResetPassword/ResetPassword";
 import Login from "./Components/Login/index";
-import LateralPanel from "./Components/LateralPanel/lateralPanel";
+import Menu from "./Components/LateralPanel/lateralPanel";
 function App() {
+  const [token, setToken] = useState()
+
+  if(token=="true"){
+    return <Login setToken={setToken}/>
+  }
   return (
     <Router>
-      <div>
-        <nav>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/resetpassword">ResetPassword</Link></li>
-            <li><Link to="/atletas">Atletas</Link></li>
-            <li><Link to="/lateralPanel">Menu</Link></li>
-          </ul>
-        </nav>
-
+        <Menu/>
         <Switch>
           <Route path="/resetpassword">
             <ResetPassword/>
@@ -26,23 +23,9 @@ function App() {
           <Route path="/atletas">
             <Login/>
           </Route>
-          <Route path="/lateralPanel">
-            <LateralPanel/>
-          </Route>
         </Switch>
-      </div>
     </Router>
   );
-}
-
-function Home(){
-  return <h2>Home</h2>
-}
-function About(){
-  return <h2>About</h2>
-}
-function Users(){
-  return <h2>Users</h2>
 }
 
 export default App;
