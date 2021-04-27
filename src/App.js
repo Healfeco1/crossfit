@@ -1,29 +1,31 @@
-import React, {useState} from 'react'
-import {BrowserRouter as Router,
-        Switch,
-        Route,
-        Link
-  } from "react-router-dom";
+import React, { useState, useContext } from 'react'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import ResetPassword from "./Components/ResetPassword/ResetPassword";
 import Login from "./Components/Login/index";
 import Menu from "./Components/LateralPanel/lateralPanel";
-function App() {
-  const [token, setToken] = useState()
+import Dashboard from "./pages/Dashboard";
+import { firebaseAuth } from "./provider/AuthProvider"
 
-  if(token=="true"){
-    return <Login setToken={setToken}/>
-  }
+
+function App() {
+  // Firebase
+  const {token} = useContext(firebaseAuth);
+  console.log(token);
+  const content = {
+    marginLeft: "64px",
+    padding: "15px 20px 0"
+  };
   return (
     <Router>
-        <Menu/>
-        <Switch>
-          <Route path="/resetpassword">
-            <ResetPassword/>
-          </Route>
-          <Route path="/atletas">
-            <Login/>
-          </Route>
-        </Switch>
+      <Switch>
+          <Route exact path="/" render={rProps => token === null ? <Login/> : <><Dashboard/> <Menu/> </>}/>
+          {/* <Route exact='/dashboard' render={rProps => token === null ? <Login/> : }/> */}
+      </Switch>
     </Router>
   );
 }
