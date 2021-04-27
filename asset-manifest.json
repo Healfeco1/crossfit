@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/crossfit/static/css/main.6fe1eab5.chunk.css",
-    "main.js": "/crossfit/static/js/main.dc3cb830.chunk.js",
-    "main.js.map": "/crossfit/static/js/main.dc3cb830.chunk.js.map",
-    "runtime-main.js": "/crossfit/static/js/runtime-main.d27a27f2.js",
-    "runtime-main.js.map": "/crossfit/static/js/runtime-main.d27a27f2.js.map",
-    "static/js/2.6d3a0d49.chunk.js": "/crossfit/static/js/2.6d3a0d49.chunk.js",
-    "static/js/2.6d3a0d49.chunk.js.map": "/crossfit/static/js/2.6d3a0d49.chunk.js.map",
+    "main.css": "/crossfit/static/css/main.76ec609b.chunk.css",
+    "main.js": "/crossfit/static/js/main.6154506f.chunk.js",
+    "main.js.map": "/crossfit/static/js/main.6154506f.chunk.js.map",
+    "runtime-main.js": "/crossfit/static/js/runtime-main.afbb6a3b.js",
+    "runtime-main.js.map": "/crossfit/static/js/runtime-main.afbb6a3b.js.map",
+    "static/js/2.98151c05.chunk.js": "/crossfit/static/js/2.98151c05.chunk.js",
+    "static/js/2.98151c05.chunk.js.map": "/crossfit/static/js/2.98151c05.chunk.js.map",
     "index.html": "/crossfit/index.html",
-    "static/css/main.6fe1eab5.chunk.css.map": "/crossfit/static/css/main.6fe1eab5.chunk.css.map",
-    "static/js/2.6d3a0d49.chunk.js.LICENSE.txt": "/crossfit/static/js/2.6d3a0d49.chunk.js.LICENSE.txt",
+    "static/css/main.76ec609b.chunk.css.map": "/crossfit/static/css/main.76ec609b.chunk.css.map",
+    "static/js/2.98151c05.chunk.js.LICENSE.txt": "/crossfit/static/js/2.98151c05.chunk.js.LICENSE.txt",
     "static/media/logo.262c7486.png": "/crossfit/static/media/logo.262c7486.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.d27a27f2.js",
-    "static/js/2.6d3a0d49.chunk.js",
-    "static/css/main.6fe1eab5.chunk.css",
-    "static/js/main.dc3cb830.chunk.js"
+    "static/js/runtime-main.afbb6a3b.js",
+    "static/js/2.98151c05.chunk.js",
+    "static/css/main.76ec609b.chunk.css",
+    "static/js/main.6154506f.chunk.js"
   ]
 }
