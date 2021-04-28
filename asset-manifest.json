@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/crossfit/static/css/main.76ec609b.chunk.css",
-    "main.js": "/crossfit/static/js/main.6154506f.chunk.js",
-    "main.js.map": "/crossfit/static/js/main.6154506f.chunk.js.map",
+    "main.js": "/crossfit/static/js/main.d067697e.chunk.js",
+    "main.js.map": "/crossfit/static/js/main.d067697e.chunk.js.map",
     "runtime-main.js": "/crossfit/static/js/runtime-main.afbb6a3b.js",
     "runtime-main.js.map": "/crossfit/static/js/runtime-main.afbb6a3b.js.map",
     "static/js/2.98151c05.chunk.js": "/crossfit/static/js/2.98151c05.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.afbb6a3b.js",
     "static/js/2.98151c05.chunk.js",
     "static/css/main.76ec609b.chunk.css",
-    "static/js/main.6154506f.chunk.js"
+    "static/js/main.d067697e.chunk.js"
   ]
 }
