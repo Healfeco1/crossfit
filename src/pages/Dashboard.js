@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useContext, useEffect, useState} from 'react'
+import { firebaseAuth } from "../provider/AuthProvider"
 
 export default function Dashboard( {content} ) {
+    // Firebase
+    const userToken = useContext(firebaseAuth)
     return (
-        // <div style={content}>
         <div >
         {/* <MenuContext.Consumer> */}
             {/* {(contex) => sidebar} */}

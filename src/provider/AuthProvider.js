@@ -1,36 +1,31 @@
-import React, {useState} from 'react'
+import React, {useState, createContext} from 'react'
 import {authMethods} from '../firebase/authMethods'
 
 const AuthProvider = (props) => {
     const [inputs, setInputs] = useState({email: '', password: ''})
-    const [errors, setErrors] = useState([])
+    const [errors, setErrors] = useState('')
     const [token, setToken] = useState(null);
+    const [userToken, setUserToken] = useState(null);
     
-    // if(!token){
-    //     if(localStorage.getItem('token') != '' && localStorage.getItem('token') != null){
-    //       setToken(localStorage.getItem('token'));
-    //       console.log(token);
-    //     }
-    // }
     const handleSignin = () => {
-        console.log('Handle Signin!!!');
-        console.log(inputs);
-        authMethods.signin(inputs.email, inputs.password, setErrors, setToken)
+        authMethods.signin(inputs.email, inputs.password, setErrors, setToken, setUserToken)
     }
     const handleSignout = () =>{
-        console.log('Autprovider: handleSingout');
-        authMethods.signout(setErrors,setToken);
+        authMethods.signout(setErrors,setToken, setInputs);
     }
-    const handleResetPassword = () =>{
-        console.log("Reset password", inputs.email);
-        // authMethods.resetpassword();
+    const handleResetPassword = email =>{
+        authMethods.resetpassword(setErrors, email);
     }
+    
     return (
         <firebaseAuth.Provider
         value={{
             handleSignin,
             handleSignout,
+            handleResetPassword,
+            setErrors,
             token,
+            userToken,
             inputs,
             setInputs,
             errors,
@@ -43,3 +38,4 @@ const AuthProvider = (props) => {
 
 export default AuthProvider;
 export const firebaseAuth = React.createContext()
+export const UserContext = createContext({userToken: null})

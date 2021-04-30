@@ -10,23 +10,19 @@ import Login from "./Components/Login/index";
 import Menu from "./Components/LateralPanel/lateralPanel";
 import Dashboard from "./pages/Dashboard";
 import { firebaseAuth } from "./provider/AuthProvider"
+import { ToastProvider } from 'react-toast-notifications'
 
 
 function App() {
   // Firebase
-  const {token} = useContext(firebaseAuth);
-  console.log(token);
-  const content = {
-    marginLeft: "64px",
-    padding: "15px 20px 0"
-  };
+  const { token } = useContext(firebaseAuth);
   return (
-    <Router>
-      <Switch>
-          <Route exact path="/" render={rProps => token === null ? <Login/> : <><Dashboard/> <Menu/> </>}/>
-          {/* <Route exact='/dashboard' render={rProps => token === null ? <Login/> : }/> */}
-      </Switch>
-    </Router>
+      <Router>
+        <Switch>
+          <Route exact path="/" render={rProps => token === null ? <ToastProvider><Login/></ToastProvider> : <><Dashboard/> <Menu/> </>}/>
+        </Switch>
+      </Router>
+
   );
 }
 

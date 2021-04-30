@@ -19,6 +19,9 @@ export default function LateralPanel() {
   const showSidebar = () => {
     setSidebar(!sidebar);
   };
+
+  sidebar == true ? document.body.classList.add('body-pd'):document.body.classList.remove('body-pd')
+  
   function showSelect(id) {
     // console.log(id);
     setSelect(id)

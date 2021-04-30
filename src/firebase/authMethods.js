@@ -2,21 +2,19 @@ import firebaseConfig from './firebase';
 import firebase from 'firebase';
 
 export const authMethods = {
-    signin: (email,password, setErrors, setToken) => {
+    signin: (email,password, setErrors, setToken, setUserToken) => {
         firebase.auth().signInWithEmailAndPassword(email, password)
-        .then(async res => {
-            const token = await Object.entries(res.user)[5][1].b
-            // Set token to localStorange
-            // await localStorage.setItem('token', token)
-            // setToken(window.localStorage.token)
+        .then( async userCredentials=>{
+            const token = await userCredentials.user?.getIdToken();
             setToken(token)
-            console.log(res);
+            setUserToken(token)
         })
         .catch(err => {
-            setErrors(prev => ([...prev, err.message]))
+            // setErrors(prev => ([...prev, err.message]))
+            setErrors(prev => (err.message))
         })
     },
-    signout: (setErrors, setToken) => {
+    signout: (setErrors, setToken, setInputs) => {
         console.log('signout');
         // signout is a no argument function
         firebase.auth().signOut().then(res => {
@@ -24,7 +22,8 @@ export const authMethods = {
             // remove token
             // localStorage.removeItem('token');
             // set the token back to original state
-            setToken(null)
+            setToken(null);
+            setInputs({email: '', password: ''});
             // generate a new token to next session
         })
         .catch(err=>{
@@ -37,6 +36,16 @@ export const authMethods = {
         })
     },
     resetpassword: (setErrors, email) => {
-        console.log('resetpassword');
+        firebase.auth().sendPasswordResetEmail(email)        
+        .then(()=>{
+            console.log(`send email to: ${email}`);
+        })
+        .catch(err => {
+            setErrors(err.message);
+        })
     },
+    authStateChanged: (async (user, setUser) => {
+        const { displayName, email} = user;
+        setUser({displayName, email})
+    })
 }

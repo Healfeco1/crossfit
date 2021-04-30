@@ -1,12 +1,48 @@
+/*===== VARIABLES CSS =====*/
+:root{
+  --header-height: 3rem;
+  --nav-width: 4rem;
+
+  /*===== Colors =====*/
+  --first-color: #ff7900;
+  /* --first-color-light: #AFA5D9; */
+  --white-color: #F7F6FB;
+  
+  /*===== Font and typography =====*/
+  --body-font: 'Montserrat', sans-serif;
+  --normal-font-size: 1rem;
+  
+  /*===== z index =====*/
+  --z-fixed: 100;
+}
+
+/*===== BASE =====*/
+*,::before,::after{
+  box-sizing: border-box;
+}
+
+body{
+  /* margin-left: ; */
+  font-size: 16px;
+  margin-left: calc(var(--header-height) + 2rem);
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  transition: .5s;
+}
+
+.body-pd{
+  padding-left: calc(var(--nav-width) + 1rem);
+}
+
 /* Menu */
 .nav-menu{
-  background-color: #db3d44;
-  position: absolute;
+  background-color: var(--first-color);
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   z-index: 1005;
-  min-width: 64px;
+  min-width: var(--nav-width);
   transition: min-width 0.2s; 
   -webkit-transition: min-width 0.2s;
   /* color: #fff; */
@@ -16,7 +52,7 @@
 }
 
 .nav-menu.active{
-  min-width: 180px;
+  min-width: calc(var(--nav-width) + 100px);
   transition: min-width 0.2s;
   -webkit-transition: min-width 0.2s;
 }
@@ -24,8 +60,8 @@
 /* Button toggle */
 .button-toggle{
   position: relative;
-  width: 64px;
-  height: 64px;
+  width: var(--nav-width);
+  height: var(--nav-width);
   float: left;
   padding: 0;
   margin: 0;
@@ -52,13 +88,18 @@
 .navicon{
   display: block;
   float: left;
-  width: 64px;
+  width: var(--nav-width);
   height: 50px;
   margin-right: -6px;
   line-height: 50px;
   text-align: center;
   transition: opacity 0.2s linear;
   -webkit-transition: opacity 0.2s linear;
+}
+
+.sidenav-nav-micons > .sidenav-item > .nav-navitem:hover{
+ color: var(--white-color);
+ opacity: 1;
 }
 
 
@@ -95,11 +136,6 @@
   cursor: pointer;
 }
 
-.sidenav-item-active{
-  /* clear: both;
-  position: relative; */
-}
-
 /* Black line when clic on icon */
 .sidenav-nav-micons > .sidenav-item > .nav-navitem {
   position: relative;
@@ -108,7 +144,7 @@
   height: 50px;
   white-space: nowrap;
   text-decoration: none;
-  color: #fff;
+  color: var(--white-color);
   text-align: center;
   opacity: 0.7;
 }
@@ -117,6 +153,14 @@
 .sidenav-nav-micons > .sidenav-item.highlighted > .nav-navitem{
   background-color: rgba(0, 0, 0 , .2);
   opacity: 1;
+}
+.sidenav-nav-micons > .sidenav-item.highlighted > .nav-navitem::before{
+  content: '';
+  position: fixed;
+  left: 0;
+  width: 2px;
+  height: 50px;
+  background-color: var(--white-color);
 }
 
 /* Logout Icon */

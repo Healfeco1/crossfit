@@ -1,40 +1,38 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import atleta from '../../assets/images/atleta.png'
 import { firebaseAuth } from "../../provider/AuthProvider"
+import { useToasts } from 'react-toast-notifications'
 
 
 export default function Sesion({ setShow }) {
 
-    // Firebase
-    const { handleSignin, inputs, setInputs, errors } = useContext(firebaseAuth)
-
     // Notifications toasts
+    const { addToast } = useToasts()
 
-    const [user, setUser] = useState();
+    // Firebase
+    const { handleSignin, inputs, setInputs, errors, userToken, setErrors } = useContext(firebaseAuth)
+
+    const [email, setUser] = useState();
     const [password, setPassword] = useState();
+
+
+    useEffect(() => {
+        if (errors) {
+            addToast(errors, { appearance: 'error', autoDismiss: true });
+        }
+        setErrors('');
+    }, [errors])
+    
     const handleSubmit = async e => {
         e.preventDefault();
-        console.log('handleSubmit');
-        // const token = await loginUser({
-        //     user,
-        //     password
-        // });
-        // setToken(token);
-        // if(password == "admin" && user == "admin"){
-        //     const token = "true"
-        // }
-        setInputs({ user, password })
-        handleSignin(inputs.name, inputs.password);
-        // console.log(inputs);
+        handleSignin();
     }
     const handleChange = e => {
         const { name, value } = e.target
-        console.log(inputs);
         setInputs(prev => ({ ...prev, [name]: value }))
     }
     return (
         <form onSubmit={handleSubmit}>
-            {errors.length > 0 ? errors.map(error => <span style={{ color: 'red' }}>{error}</span>) : null}
             <div className="input-group">
                 <i className="atleta rounded-left"><img src={atleta} /></i>
                 {/* <input className="form-control" type="text" name="username" id="username" placeholder="Username" onChange={e => setUser(e.target.value)} /> */}
